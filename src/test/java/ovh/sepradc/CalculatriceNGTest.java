@@ -1,17 +1,18 @@
 package ovh.sepradc;
 
-import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class CalculatriceTest extends TestCase {
+import static org.testng.Assert.*;
+
+public class CalculatriceNGTest {
     private Calculatrice calculatrice1;
     private Calculatrice calculatrice2;
     private Calculatrice calculatrice3;
     private Calculatrice calculatrice4;
 
-    @Override
-    public void setUp() throws Exception {
+    @BeforeMethod
+    public void setUp() {
         calculatrice1 = new Calculatrice(5,2);
         calculatrice2 = new Calculatrice(-2,-7);
         calculatrice3 = new Calculatrice(-6, 10);
@@ -45,6 +46,7 @@ public class CalculatriceTest extends TestCase {
         assertEquals(expected, actual);
     }
 
+    @Test
     public void testAdditionnerDeuxPositif() {
         int expected = 7;
 
@@ -53,6 +55,7 @@ public class CalculatriceTest extends TestCase {
         assertEquals(expected, actual);
     }
 
+    @Test
     public void testDiviser() {
         int expected = 5;
 
@@ -62,6 +65,7 @@ public class CalculatriceTest extends TestCase {
 
     }
 
+    @Test
     public void testSoustraire() {
         int excepted = 5;
 
