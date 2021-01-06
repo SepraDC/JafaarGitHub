@@ -1,3 +1,5 @@
+package ovh.sepradc;
+
 public class Calculatrice {
     private final int operande1;
     private final int operande2;
